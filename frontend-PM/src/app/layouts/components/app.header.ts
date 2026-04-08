@@ -10,7 +10,7 @@ import { Component, input } from "@angular/core";
    <header
       class="sticky top-0 z-50 border-b border-gray-200 bg-white/95 pt-[env(safe-area-inset-top)] backdrop-blur"
     >
-      <div
+      <div  
         class="mx-auto grid h-14 max-w-screen-md grid-cols-[40px_1fr_40px] items-center px-3 sm:grid-cols-[44px_1fr_44px] sm:px-4 md:h-16 md:px-6"
       >
         <button

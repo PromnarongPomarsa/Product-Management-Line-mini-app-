@@ -1,1 +1,9 @@
-<app-spinning-component [isLoading]="false" />
+<app-spinning-component [isLoading]="isLoading" />
+
+<div class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
+    @for (item of products; track $index) {
+    <app-product [routerLink]="['/product', item.id]" class="block" [image]="item.image" [description]="item.description" [name]="item.name"
+        [price]="item.price">
+    </app-product>
+    }
+</div>
