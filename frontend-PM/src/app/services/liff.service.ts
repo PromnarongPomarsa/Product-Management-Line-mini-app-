@@ -25,6 +25,15 @@ export class LiffService implements OnInit {
         } else {
             liff.login();
         }
+
+        this.checkIO();
+    }
+
+    checkIO() {
+        switch (liff.getOS()) {
+            case "android": document.body.style.backgroundColor = "#d1f5d3"; break
+            case "ios": document.body.style.backgroundColor = "#eeeeee"; break
+        }
     }
 
     GetAccessToken(): string {

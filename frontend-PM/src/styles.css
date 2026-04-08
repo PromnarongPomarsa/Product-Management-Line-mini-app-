@@ -1,3 +1,110 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+@import "primeicons/primeicons.css";
+
+.layout-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0 1rem 0;
+    gap: 0.5rem;
+    border-top: 1px solid var(--surface-border);
+}
+
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--maskbg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(2px);
+    z-index: 999;
+}
+
+.top-shell {
+    min-height: 100vh;
+}
+
+.top-bar {
+    background: #085db2;
+    padding: 0.85rem 1rem;
+    text-align: center;
+}
+
+.top-bar_title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding-top: env(safe-area-inset-top);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.app-header__inner {
+    height: 56px;
+    display: grid;
+    grid-template-columns: 44px 1fr 44px;
+    align-items: center;
+    padding: 0 12px;
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+.app-header__title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 8px;
+}
+
+.app-header__icon {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #374151;
+    cursor: pointer;
+}
+
+.app-header__icon:active {
+    background: #f3f4f6;
+}
+
+@media (min-width: 768px) {
+    .app-header__inner {
+        height: 60px;
+        padding: 0 16px;
+    }
+
+    .app-header__title {
+        font-size: 18px;
+    }
+}
+
+
+:host ::ng-deep .spinner-overlay .p-progressspinner {
+    width: 64px;
+    height: 64px;
+}

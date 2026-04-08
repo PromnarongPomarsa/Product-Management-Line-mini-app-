@@ -1,21 +1,10 @@
-<!-- @if (liff.isReady()) {
-<router-outlet />
-} @else {
-<div>Loading LINE...</div>
-} -->
-
-<div class="top-shell">
-    <header class="top-bar">
-        <div class="top-bar_title">{{ pageHeader }}</div>
-    </header>
-
-    <main>
+<div class="top-shell min-h-screen flex flex-col bg-gray-50">
+    <app-header pageHeader="Page1" />
+    <main class="flex-1 p-4 md:p-6">
         @if (liff.isReady()) {
         <router-outlet />
         } @else {
-        <div class="loading">
-            <span>กำลังโหลด...</span>
-        </div>
+        <app-spinning-component [isLoading]="true" />
         }
     </main>
 </div>

@@ -14,7 +14,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([liffAuthInterceptor])),
     providePrimeNG({
       theme: {
-        preset: 'Aura',
+        preset: Aura,
       }
     })
   ]
