@@ -1,4 +1,5 @@
-import { Component, input } from "@angular/core";
+import { Component, inject, input } from "@angular/core";
+import { Location } from "@angular/common";
 
 @Component({
     standalone: true,
@@ -17,8 +18,9 @@ import { Component, input } from "@angular/core";
           type="button"
           class="flex h-9 w-9 items-center justify-center rounded-full text-gray-700 active:bg-gray-100 sm:h-10 sm:w-10"
           aria-label="Back"
+          (click)="goBack()"
         >
-          <i class="pi pi-arrow-left text-sm sm:text-base"></i>
+          <i class="pi pi-angle-left text-sm sm:text-base"></i>
         </button>
 
         <div
@@ -37,6 +39,12 @@ import { Component, input } from "@angular/core";
     `
 })
 export class AppHeader {
+    private Location = inject(Location);
+
     pageHeader = input<string>("Home");
     profileImage = input<string>("https://profile.line-scdn.net/0h3COpWwuCbGxiCXzxvrISExJZbwZBeDV-TGsjDVQANFtYbi5qHWwrX1ULYV8Ianw5STwlDAMANAtuGhsKfF-QWGU5MV1eMS06S2Ymig");
+
+    goBack() {
+        this.Location.back();
+    }
 }
